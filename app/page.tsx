@@ -1,49 +1,35 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import Icon from '@mdi/react';
+import { mdiBowArrow } from '@mdi/js';
+import { mdiMicrophone } from '@mdi/js';
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-4 h-screen">
+    <div className="grid grid-cols-6 h-screen">
       <section className="bg-green-700 col-span-1">This is going to be the Sidebar</section>
 
-      <section className="bg-green-400 col-span-3 grid grid-rows-8">
+      <section className="bg-green-400 col-span-5 grid grid-rows-8">
         <div className="bg-green-600 row-span-1">This will be the header</div>
 
-        <div>This will be tha main chat Area
+        <div className="row-span-7 flex flex-col justify-between items-center">This will be the main chat Area
+          <div className="w-full px-3 py-4">
 
-          <Card className="w-full max-w-sm">
 
-            <CardContent>
-              <form>
-                <div className="flex flex-col gap-6">
+            <form className="bg-white rounded-2xl shadow px-6 py-6 flex justify-start">
 
-                  <div className="grid gap-2">
-                    <div className="flex items-center">
-                      <Label htmlFor="chatMessage">Message</Label>
-                      <a
-                        href="#"
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                      >
-                        What's on your mind?
-                      </a>
-                    </div>
-                    <Input id="chatMessage" type="chatMessage" required />
-                  </div>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+              <button className="me-5"><Icon path={mdiMicrophone} size={1.5}></Icon></button>
+
+              <div className="w-full flex justify-between">
+                <input id="chatMessage" type="chatMessage" placeholder="What's on your mind..." required className="w-full focus:outline-none" />
+
+                <button><Icon path={mdiBowArrow} size={1.5} /></button>
+              </div>
+
+
+            </form>
+
+          </div>
+
         </div>
 
 
